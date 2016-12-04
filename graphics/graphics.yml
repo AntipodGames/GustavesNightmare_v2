@@ -1,0 +1,9 @@
+sprite_0: 
+  name: Hero
+  path: graphics/roll.png
+  frames_nbr: 8
+  width: 120
+  height: 75
+  center_pos:
+   x: 3
+   y: 2
