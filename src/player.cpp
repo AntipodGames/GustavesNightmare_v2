@@ -47,7 +47,7 @@ void Player::down(){
 void Player::updateAngle(int mouseX,int mouseY){
     mousePosX = mouseX;
     mousePosY = mouseY;
-    TO_FLOAT(_property["angle"])->value =
+    TO_DOUBLE(_property["angle"])->value =
             calcAngle(TO_INTEGER(_property["x"])->value,
                 TO_INTEGER(_property["y"])->value,mouseX,mouseY);
 //    std::cout << TO_FLOAT(_property["angle"])->value << std::endl;

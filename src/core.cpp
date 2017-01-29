@@ -7,9 +7,12 @@ void Environment::_init(){
 
 //    EntityProp* player_prop(new EntityProp("Hero",400,300,75,75,3,10));
 //    PlayerBehav* player_beh(new PlayerBehav(player_prop));
-    std::shared_ptr<Player> player = std::make_shared<Player>(Player("Hero",400,300,75,75,3,10));
+    std::shared_ptr<Player> player = std::make_shared<Player>(Player("Hero",400,300,120,75,3,10));
 //    Player* player = new Player("Hero",400,300,75,75,3,10);
+    EntityBase::Ptr bouboule = std::make_shared<EntityBase>(EntityBase("Boule",400,300,75,75,3,10));
+    bouboule->set_behavior(EntityBase::mob1);
     _entities_map.emplace(player->get_name(),std::static_pointer_cast<age::Entity>(player));
+    _entities_map.emplace(bouboule->get_name(),bouboule);
 //    EntityProp prop  = *std::static_pointer_cast<EntityProp>(player->access_property());
 
 }

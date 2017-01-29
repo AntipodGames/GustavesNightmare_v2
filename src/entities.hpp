@@ -31,10 +31,11 @@ public:
     void set_velocity(float v);
     void decreaseLife(int pt);
 
+    static std::function<void(age::Entity::_property_t)> mob1;
+
 protected:
     float calcAngle(float x1, float y1, float x2, float y2);
 };
-
 
 
 #endif // ENTITIES_HPP
