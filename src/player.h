@@ -9,17 +9,21 @@
 #include <SFML/Graphics.hpp>
 
 
-class Player : public QObject, public EntityBase
+class Player : public QObject, public age::Entity
 {
     Q_OBJECT
 
 public:
     Player(){}
     Player(std::string n, int x, int y, int w, int h, int v, int l) :
-        EntityBase(n,x,y,w,h,v,l)
-    {}
+        Entity(n,w,h,v)
+    {
+        _property.emplace("x",INTEGER_PTR(x));
+        _property.emplace("y",INTEGER_PTR(y));
+        _property.emplace("life",INTEGER_PTR(l));
+    }
     Player(const Player& pl) :
-        EntityBase(pl){}
+        age::Entity(pl){}
 
     ~Player(){}
 

@@ -1,23 +1,16 @@
 #include "core.hpp"
+#include "entities.hpp"
 
 
 void Environment::_init(){
     std::cout << "Environment Initialisation" << std::endl;
 
-
-//    EntityProp* player_prop(new EntityProp("Hero",400,300,75,75,3,10));
-//    PlayerBehav* player_beh(new PlayerBehav(player_prop));
-    std::shared_ptr<Player> player = std::make_shared<Player>(Player("Hero",400,300,120,75,3,10));
-//    Player* player = new Player("Hero",400,300,75,75,3,10);
-    EntityBase::Ptr bouboule = std::make_shared<EntityBase>(EntityBase("Boule",400,300,75,75,3,10));
-    bouboule->set_behavior(EntityBase::mob1);
+    std::shared_ptr<Player> player = std::make_shared<Player>(Player("gustave",400,300,120,75,3,10));
     _entities_map.emplace(player->get_name(),std::static_pointer_cast<age::Entity>(player));
-    _entities_map.emplace(bouboule->get_name(),bouboule);
-//    EntityProp prop  = *std::static_pointer_cast<EntityProp>(player->access_property());
-
 }
 
 void Environment::_update(){
+
 }
 
 
@@ -28,17 +21,21 @@ void Core::_init(){
 
     _engine->load_config_file("config/env_conf.yml");
 
+    _engine->load_level(0);
+
     setMouseTracking(true);
 
     _init_view(400,300,800,600);
 
     _load_graphics("graphics/graphics.yml");
 
+    scripts::init_level_test(_engine->get_entities());
+
     std::cout << TO_INTEGER(
-                     std::static_pointer_cast<Player>(_engine->get_entities()["Hero"])
+                     std::static_pointer_cast<Player>(_engine->get_entities()["gustave"])
                             ->access_property()["velocity"])->value << std::endl;
 
-    std::shared_ptr<Player> player(std::static_pointer_cast<Player>(_engine->get_entities()["Hero"]));
+    std::shared_ptr<Player> player(std::static_pointer_cast<Player>(_engine->get_entities()["gustave"]));
 
 
     //Connections core to player

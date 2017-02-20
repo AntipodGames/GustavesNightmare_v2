@@ -1,7 +1,7 @@
 sprite_0: 
-  name: Hero
+  name: gustave
   path: graphics/roll.png
-  animation_graph: graphics/gustave.yml 
+  animation_graph: graphics/gustave_1.yml 
   frames_nbr: 8
   width: 120
   height: 75
@@ -9,9 +9,19 @@ sprite_0:
    x: 3
    y: 2
 sprite_1:
-  name: Boule
+  name: boule
   path: graphics/anim1.png
   animation_graph: graphics/boule.yml
+  frames_nbr: 8
+  width: 75
+  height: 75
+  center_pos:
+   x: 2
+   y: 2
+sprite_2:
+  name: blurg
+  path: graphics/blurg.png
+  animation_graph: graphics/blurg.yml
   frames_nbr: 8
   width: 75
   height: 75

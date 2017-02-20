@@ -3,43 +3,41 @@
 
 //******/SLOTS\*******\\
 
+using namespace scripts;
+
 void Player::left(){
     std::cout << "left : " << TO_INTEGER(_property["x"])->value << std::endl;
-    decreaseX();
+    decreaseX(_property);
     //    if(tz.intersection(collision_map,sf::Color::Black))
 //        prop.increaseX();
-    TO_INTEGER(_property["frame"])->value++;
 //    updateAngle(mousePosX,mousePosY);
 }
 
 void Player::right(){
 
     std::cout << "right : " << TO_INTEGER(_property["x"])->value << std::endl;
-    increaseX();
+    increaseX(_property);
 
 //    if(tz.intersection(collision_map,sf::Color::Black))
 //        _property->decreaseX();
 
-    TO_INTEGER(_property["frame"])->value++;
     //    updateAngle(mousePosX,mousePosY);
 
 }
 
 void Player::up(){
     std::cout << "up : " << TO_INTEGER(_property["y"])->value << std::endl;
-    decreaseY();
+    decreaseY(_property);
 
 //    if(tz.intersection(collision_map,sf::Color::Black))
 //        _property->increaseY();
-    TO_INTEGER(_property["frame"])->value++;
 }
 
 void Player::down(){
     std::cout << "down : " << TO_INTEGER(_property["y"])->value << std::endl;
-    increaseY();
+    increaseY(_property);
 //    if(tz.intersection(collision_map,sf::Color::Black))
 //        _property->decreaseY();
-    TO_INTEGER(_property["frame"])->value++;
 
 }
 
